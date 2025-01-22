@@ -106,7 +106,7 @@ export default function TasksPage() {
             placeholder="Add Task"
             value={newTask}
             onChange={handleTask}
-            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 flex-1"
+            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 flex-1 w-full sm:w-auto"
           />
           <button title="add Task?" className="" onClick={addTask}>
             <CiSquarePlus size={45} />
@@ -128,30 +128,33 @@ export default function TasksPage() {
           </div>
         ))}
         {isPopupVisible && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl">
-              <h2 className="text-xl font-bold mb-4">Edit Task</h2>
-              <input
-                title="newTaskTitle?"
-                type="text"
-                value={newTaskTitle}
-                onChange={handleTaskTitle}
-                className="border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 flex-1 mb-4"
-              />
-              <button
-                onClick={UpdateTask}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600 mx-3"
-              >
-                Edit Task
-              </button>
-              <button
-                onClick={closePopup}
-                className="px-4 py-2 bg-white text-gray-300 rounded-lg hover:bg-gray-600 border border-gray-300 hover:text-white"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+         <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-2xl w-full sm:w-auto mx-4">
+           <h2 className="text-xl font-bold mb-4 text-center">Edit Task</h2>
+           <input
+             title="newTaskTitle?"
+             type="text"
+             value={newTaskTitle}
+             onChange={handleTaskTitle}
+             className="border border-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 w-full mb-4"
+           />
+           <div className="flex justify-end space-x-2">
+             <button
+               onClick={UpdateTask}
+               className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
+             >
+               Edit Task
+             </button>
+             <button
+               onClick={closePopup}
+               className="px-4 py-2 bg-white text-gray-400 rounded-lg hover:bg-gray-600 border border-gray-300 hover:text-white"
+             >
+               Close
+             </button>
+           </div>
+         </div>
+       </div>
+       
         )}
       </div>
     </div>
