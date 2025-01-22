@@ -129,7 +129,7 @@ export default function TasksPage() {
         ))}
         {isPopupVisible && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl">
               <h2 className="text-xl font-bold mb-4">Edit Task</h2>
               <input
                 title="newTaskTitle?"
@@ -140,7 +140,7 @@ export default function TasksPage() {
               />
               <button
                 onClick={UpdateTask}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600 mr-3"
+                className="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600 mx-3"
               >
                 Edit Task
               </button>
