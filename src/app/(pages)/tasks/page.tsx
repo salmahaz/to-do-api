@@ -100,22 +100,18 @@ export default function TasksPage() {
       <div className="max-w-2xl mx-auto rounded-lg bg-white p-2 shadow-lg">
         <h1 className="text-center my-6">Task Manager</h1>
         {/*First Part*/}
-        <div className="flex items-center space-x-2 flex-col sm:flex-row sm:space-x-4">
-  <input
-    type="text"
-    placeholder="Add Task"
-    value={newTask}
-    onChange={handleTask}
-    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 flex-1 mb-4 sm:mb-0"
-  />
-  <button
-    title="add Task?"
-    onClick={addTask}
-    className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex justify-center items-center"
-  >
-    <CiSquarePlus size={45} />
-  </button>
-</div>
+        <div className="flex items-center sm:flex-row sm:space-x-2">
+          <input
+            type="text"
+            placeholder="Add Task"
+            value={newTask}
+            onChange={handleTask}
+            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500 flex-1"
+          />
+          <button title="add Task?" className="" onClick={addTask}>
+            <CiSquarePlus size={45} />
+          </button>
+        </div>
         {/*List Of Tasks*/}
 
         {tasks.map((task) => (
