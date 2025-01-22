@@ -11,9 +11,14 @@ export async function GET() {
 
 export async function POST(request : NextRequest){
     const {title} = await request.json();
+    if(title === ""){
+        //return NextResponse.status(400).json({error: "Title is required"});
+    }else{
     const newTask = {id: tasks.length + 1, title, completed: false};
     tasks.push(newTask);
+    }
     return NextResponse.json(tasks);
+    
 }
 
 export async function DELETE(request : NextRequest){
